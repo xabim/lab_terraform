@@ -17,7 +17,7 @@ data "template_file" "userdata" {
     template = "${file("templates/userdata.tpl")}"
 
     vars {
-        webserver = "httpd"
+        webserver = "apache2"
     }
 }
 
