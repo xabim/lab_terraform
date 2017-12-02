@@ -24,4 +24,5 @@ data "template_file" "userdata" {
 resource "aws_instance" "web-server" {
     ami = "${data.aws_ami.ubuntu.id}"
     instance_type = "${var.instance_type}"
+    user_data = "${data.template_file.userdata.rendered}"
 }
