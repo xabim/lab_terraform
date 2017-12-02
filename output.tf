@@ -3,5 +3,5 @@ output "server-ip" {
 }
 
 output "az" {
-    value = "${data.aws_availability_zones.az.name}"
+    value = "${data.aws_availability_zones.az.names}"
 }
