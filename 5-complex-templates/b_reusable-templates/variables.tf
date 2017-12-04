@@ -19,7 +19,7 @@ variable "aws_amis" {
 
 variable "project" {
     type = "string"
-    default = "openwebinars-web"
+    default = "web"
 }
 
 variable "enviroment" {

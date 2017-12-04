@@ -1,7 +1,7 @@
 data "aws_availability_zones" "az" {}
 
 resource "aws_elb" "elb-web" {
-    name = "${var.enviroment}-${var.project}"
+    name_prefix = "${var.project}-"
     "listener" {
         instance_port = 80
         instance_protocol = "http"
