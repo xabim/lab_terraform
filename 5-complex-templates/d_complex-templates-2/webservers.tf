@@ -11,7 +11,7 @@ resource "aws_launch_configuration" "web-server" {
 }
 
 resource "aws_autoscaling_group" "as-web" {
-    name = "${aws_launch_configuration.web-server.name}"
+    name = "asg-web"
     launch_configuration = "${aws_launch_configuration.web-server.name}"
     max_size = 1
     min_size = 1
