@@ -41,6 +41,12 @@ resource "aws_security_group" "rds-sg" {
         to_port = 3306
         security_groups = ["${aws_security_group.web-sg.id}"]
     }
+    ingress {
+        from_port = 3306
+        protocol = "tcp"
+        to_port = 3306
+        cidr_blocks = ["${var.myip}/32"]
+    }
     egress {
         from_port = 0
         protocol = "-1"

@@ -61,3 +61,5 @@ variable "rds_passwd" {
     type = "string"
     default = "0penw3b1n4r$"
 }
+
+variable "myip" {}
