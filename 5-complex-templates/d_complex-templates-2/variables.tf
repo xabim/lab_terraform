@@ -51,3 +51,13 @@ variable "enviroment" {
     type = "string"
     default = "prod"
 }
+
+variable "rds_username" {
+    type = "string"
+    default = "root"
+}
+
+variable "rds_passwd" {
+    type = "string"
+    default = "0penw3b1n4r$"
+}
