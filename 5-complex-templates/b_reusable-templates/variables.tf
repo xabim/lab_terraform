@@ -16,3 +16,13 @@ variable "aws_amis" {
         "eu-central-1" = "ami-bf2ba8d0"
     }
 }
+
+variable "project" {
+    type = "string"
+    default = "openwebinars-web"
+}
+
+variable "enviroment" {
+    type = "string"
+    default = "prod"
+}
