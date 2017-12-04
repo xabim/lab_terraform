@@ -3,7 +3,7 @@ resource "aws_security_group" "elb-sg" {
     vpc_id = "${aws_vpc.vpc.id}"
     ingress {
         from_port = 80
-        protocol = "http"
+        protocol = "tcp"
         to_port = 80
         cidr_blocks = ["0.0.0.0/0"]
     }
