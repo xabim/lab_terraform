@@ -11,5 +11,5 @@ resource "aws_elb" "elb-web" {
     }
 
     security_groups = ["${aws_security_group.elb-sg.id}"]
-    instances = ["${aws_instances.webservers.*.id}"]
+    instances = ["${aws_instance.webservers.*.id}"]
 }
