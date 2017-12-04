@@ -9,4 +9,7 @@ resource "aws_elb" "elb-web" {
         lb_port = 80
         lb_protocol = "http"
     }
+
+    security_groups = ["${aws_security_group.elb-sg.id}"]
+    instances = ["${aws_instances.webservers.*.id}"]
 }
