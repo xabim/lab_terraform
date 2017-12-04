@@ -1,12 +1,5 @@
 terraform {
     required_version = ">= 0.11.0"
-    backend "s3" {
-        bucket = "openwebinars-states"
-        region = "eu-west-1"
-        key = "states-tfstate"
-        dynamodb_table = "openwebinars-lockin"
-        profile = "openwebinars"
-    }
 
 }
 
@@ -16,3 +9,9 @@ provider "aws" {
 }
 
 data "aws_availability_zones" "az" {}
+
+module "vpc" {
+    source = "./modules/vpc"
+    enable_dns_hostnames = false
+    enable_dns_support = false
+}
