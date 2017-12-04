@@ -12,7 +12,7 @@ resource "aws_db_instance" "mydb" {
     storage_type = "gp2"
     multi_az = false
     db_subnet_group_name = "${aws_db_subnet_group.subn-groups.name}"
-    vpc_security_group_ids = ["${aws_security_groups.rds-sg.id}"]
+    vpc_security_group_ids = ["${aws_security_group.rds-sg.id}"]
     publicly_accessible = true
     skip_final_snapshot = true
 }
