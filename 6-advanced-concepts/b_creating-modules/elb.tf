@@ -1,7 +1,8 @@
 resource "aws_elb" "elb-web" {
     name = "${var.enviroment}-${var.project}"
     cross_zone_load_balancing = true
-    subnets = ["${aws_subnet.pub1.id}", "${aws_subnet.pub2.id}"]
+    subnets = ["${module.vpc.sub_pub1}", "${module.vpc.sub_pub2}"]
+    security_groups = ["${aws_security_group.elb-sg.id}"]
 
     "listener" {
         instance_port = 80
@@ -10,5 +11,11 @@ resource "aws_elb" "elb-web" {
         lb_protocol = "http"
     }
 
-    security_groups = ["${aws_security_group.elb-sg.id}"]
+    health_check {
+        healthy_threshold = 2
+        interval = 10
+        target = "TCP:80"
+        timeout = 5
+        unhealthy_threshold = 5
+    }
 }
