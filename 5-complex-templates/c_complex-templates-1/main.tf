@@ -6,3 +6,5 @@ provider "aws" {
     region = "eu-west-1"
     profile = "openwebinars"
 }
+
+data "aws_availability_zones" "az" {}

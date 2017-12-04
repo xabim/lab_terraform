@@ -1,12 +1,12 @@
-data "aws_availability_zones" "az" {}
-
 resource "aws_elb" "elb-web" {
-    name_prefix = "${var.project}-"
+    name = "${var.enviroment}-${var.project}"
+    cross_zone_load_balancing = true
+    subnets = ["${aws_subnet.pub1.id}", "${aws_subnet.pub2.id}"]
+
     "listener" {
         instance_port = 80
         instance_protocol = "http"
         lb_port = 80
         lb_protocol = "http"
     }
-    availability_zones = ["${data.aws_availability_zones.az.names}"]
 }
