@@ -3,7 +3,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = "${var.region}"
+  region  = "${var.aws_region}"
   profile = "openwebinars"
   version = "~> 1.0"
 }
