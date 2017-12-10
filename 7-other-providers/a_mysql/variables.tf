@@ -3,10 +3,7 @@ variable "aws_region" {
   default = "eu-west-1"
 }
 
-variable "aws_id" {
-  type = "string"
-  default = "723002569774"
-}
+
 variable "environment" {
   type = "string"
   default = "pro"
