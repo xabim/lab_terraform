@@ -1,8 +1,8 @@
 terraform {
-    required_version = ">= 0.11.0"
+  required_version = "0.11.1"
 }
 
 provider "aws" {
-    region = "eu-west-1"
-    profile = "openwebinars"
+  region  = "eu-west-1"
+  profile = "openwebinars"
 }
